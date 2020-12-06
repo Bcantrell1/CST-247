@@ -1,0 +1,27 @@
+﻿
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Page.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <style>
+        #customerInfo {
+            border: 1px black solid;
+            border-radius: 5px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container container-body">
+        @RenderPage("_Header.cshtml")
+        @RenderBody()
+    </div>
+</body>
+</html>

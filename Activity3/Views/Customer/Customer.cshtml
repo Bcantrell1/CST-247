@@ -1,0 +1,46 @@
+﻿@using Cantrell_Brian_CST247_Activity3.Models;
+
+@model Tuple<List<Customer>, Customer>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    AjaxOptions ajaxOptions = new AjaxOptions
+    {
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "customerInfo"
+    };
+}
+
+@using (Ajax.BeginForm("OnSelectCustomer", "Customer", ajaxOptions, new { id = "customerForm" }))
+{
+    @Html.AntiForgeryToken();
+    var selected = false;
+    foreach (var customer in Model.Item1)
+    {
+        if (Model.Item2 == customer)
+        {
+            selected = true;
+        }
+        else
+        {
+            selected = false;
+        }
+
+        @Html.RadioButton("CustomerNumber", customer.ID, selected, new { onchange = "$('#customerForm').trigger('submit')" })
+        @Html.Label(customer.Name);
+        <br />
+
+    }
+
+    <!-- no longer needed due to the onchange in radio button        -->
+    <input type="submit" id="SubmitButton" value="Display Details" />
+
+}
+
+<!--insert a partial page to display the customer details
+
+<div id="customerInfo">
+    @Html.Partial("~/Views/Shared/_CustomerDetails.cshtml", Model.Item2)
+</div>
+    -->
