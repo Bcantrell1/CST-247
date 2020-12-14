@@ -1,0 +1,4 @@
+2020-12-12 15:23:40.5806 INFOEntering the login controller. Login Method
+2020-12-12 15:23:40.6375 INFOExiting LoginController.Login() Login passed!
+2020-12-12 15:23:47.7493 INFOEntering the login controller. Login Method
+2020-12-12 15:23:47.7493 INFOExiting LoginController.Login() Login Failed!

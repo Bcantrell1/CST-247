@@ -1,0 +1,7 @@
+C:\Users\bribr\source\repos\Activity4-2 - REST\HelloWorldService\bin\HelloWorldService.dll.config
+C:\Users\bribr\source\repos\Activity4-2 - REST\HelloWorldService\bin\HelloWorldService.dll
+C:\Users\bribr\source\repos\Activity4-2 - REST\HelloWorldService\bin\HelloWorldService.pdb
+C:\Users\bribr\source\repos\Activity4-2 - REST\HelloWorldService\obj\Debug\HelloWorldService.csprojAssemblyReference.cache
+C:\Users\bribr\source\repos\Activity4-2 - REST\HelloWorldService\obj\Debug\HelloWorldService.csproj.CoreCompileInputs.cache
+C:\Users\bribr\source\repos\Activity4-2 - REST\HelloWorldService\obj\Debug\HelloWorldService.dll
+C:\Users\bribr\source\repos\Activity4-2 - REST\HelloWorldService\obj\Debug\HelloWorldService.pdb

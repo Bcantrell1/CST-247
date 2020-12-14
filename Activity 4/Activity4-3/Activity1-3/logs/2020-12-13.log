@@ -1,0 +1,9 @@
+2020-12-13 17:56:29.9135Entering LoginController.Login()
+2020-12-13 17:56:30.0522Parameters are: new JavaScriptSerializer().Serialize(user)
+2020-12-13 17:56:37.1972Exiting LoginController.Login() with login passing
+2020-12-13 17:57:25.6834Entering LoginController.Login()
+2020-12-13 17:57:25.6834Parameters are: new JavaScriptSerializer().Serialize(user)
+2020-12-13 17:57:25.7253Exiting LoginController.Login() with login failing
+2020-12-13 13:49:43.0865Creating Users and putting them into the cache
+2020-12-13 13:50:46.6618Creating Users and putting them into the cache
+2020-12-13 13:50:49.3891Got Users from the cache
