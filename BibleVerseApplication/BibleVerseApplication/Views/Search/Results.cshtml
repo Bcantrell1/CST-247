@@ -1,0 +1,40 @@
+﻿@model List<string>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<body>
+    <div class="jumbotron">
+        <div class="center-block text-center">
+            <h1>Search Results</h1>
+
+            @if (Model[0] == "No results found!")
+            {
+                <h3>@Model[0]</h3>
+            }
+            else
+            {
+                <table>
+                    <tr>
+                        <th>Version</th>
+                        <th>Testament</th>
+                        <th>Book</th>
+                        <th>Chapter</th>
+                        <th>Verse</th>
+                    </tr>
+                    <tr>
+                        <td>NIV</td>
+                        <td>@Model[0]</td>
+                        <td>@Model[1]</td>
+                        <td>@Model[2]</td>
+                        <td>@Model[3]</td>
+                    </tr>
+                </table>
+
+                <h3 class="verse-result">@Model[1] @Model[2]:@Model[3] - @Model[4]</h3>
+            }
+        </div>
+    </div>
+</body>
+</html>

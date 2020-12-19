@@ -1,0 +1,85 @@
+﻿@model BibleVerseApplication.Models.VerseModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<SelectListItem> listTest = new List<SelectListItem>();
+    listTest.Add(new SelectListItem
+    {
+        Text = "Old Testament",
+        Value = "Old"
+    });
+    listTest.Add(new SelectListItem
+    {
+        Text = "New Testament",
+        Value = "New"
+    });
+
+    List<SelectListItem> listChap = new List<SelectListItem>();
+    for (int i = 1; i <= 150; i++)
+    {
+        listChap.Add(new SelectListItem
+        {
+            Text = i.ToString(),
+            Value = i.ToString()
+        });
+    }
+
+    List<SelectListItem> listVerse = new List<SelectListItem>();
+    for (int i = 1; i <= 176; i++)
+    {
+        listVerse.Add(new SelectListItem
+        {
+            Text = i.ToString(),
+            Value = i.ToString()
+        });
+    }
+
+}
+<html>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="center-block">
+                <h1>Bible Verse Entry</h1>
+
+                @using (Html.BeginForm("Insert", "Insert", FormMethod.Post))
+                {
+
+                    <div class="input-group">
+                        @Html.Label("Testament")
+                        @Html.DropDownListFor(Model => Model.Testament, listTest)
+                        @Html.ValidationMessageFor(Model => Model.Testament, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="input-group">
+                        @Html.Label("Book")
+                        @Html.EditorFor(Model => Model.Book)
+                        @Html.ValidationMessageFor(Model => Model.Book, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="input-groupp">
+                        @Html.Label("Chapter")
+                        @Html.DropDownListFor(Model => Model.Chapter, listChap)
+                        @Html.ValidationMessageFor(Model => Model.Chapter, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="input-group">
+                        @Html.Label("Verse")
+                        @Html.DropDownListFor(Model => Model.Verse, listVerse)
+                        @Html.ValidationMessageFor(Model => Model.Verse, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="input-group">
+                        @Html.Label("Text")
+                        @Html.EditorFor(Model => Model.Text, new { htmlAttributes = new { required = "required" } })
+                        @Html.ValidationMessageFor(Model => Model.Text, "", new { @class = "text-danger" })
+                    </div>
+
+                    <button class="btn btn-success verse-search-button" type="submit">Insert Verse</button>
+                }
+                <p class="insert-result">@ViewBag.Message</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

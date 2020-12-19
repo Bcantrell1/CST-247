@@ -1,0 +1,78 @@
+﻿@model BibleVerseApplication.Models.VerseModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Dropdown list for the testaments.
+    List<SelectListItem> listTest = new List<SelectListItem>();
+    listTest.Add(new SelectListItem
+    {
+        Text = "Old Testament",
+        Value = "Old"
+    });
+    listTest.Add(new SelectListItem
+    {
+        Text = "New Testament",
+        Value = "New"
+    });
+
+    // Dropdown list for chapter numbers
+    List<SelectListItem> listChap = new List<SelectListItem>();
+    for (int i = 1; i <= 150; i++)
+    {
+        listChap.Add(new SelectListItem
+        {
+            Text = i.ToString(),
+            Value = i.ToString()
+        });
+    }
+
+    //Dropdown list for verse numbers.
+    List<SelectListItem> listVerse = new List<SelectListItem>();
+    for (int i = 1; i <= 176; i++)
+    {
+        listVerse.Add(new SelectListItem
+        {
+            Text = i.ToString(),
+            Value = i.ToString()
+        });
+    }
+}
+<html>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="center-block">
+                <h1>Verse Search</h1>
+                @using (Html.BeginForm("Search", "Search", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="input-group input-group-lg ">
+                        @Html.Label("Testament")
+                        @Html.DropDownListFor(model => model.Testament, listTest)
+                    </div>
+
+                    <div class="input-group input-group-lg">
+                        @Html.Label("Book")
+                        @Html.EditorFor(model => model.Book)
+                        @Html.ValidationMessageFor(model => model.Book, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="input-group input-group-lg">
+                        @Html.Label("Chapter")
+                        @Html.DropDownListFor(model => model.Chapter, listChap)
+                    </div>
+
+                    <div class="input-group input-group-lg">
+                        @Html.Label("Verse")
+                        @Html.DropDownListFor(model => model.Verse, listVerse)
+                    </div>
+
+                    <button class="btn verse-search-button" type="submit">Search</button>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+}
