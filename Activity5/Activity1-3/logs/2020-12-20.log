@@ -1,0 +1,5 @@
+2020-12-20 12:44:12.9736 DEBUG testing logger 1
+2020-12-20 12:47:29.6625 DEBUG test string
+2020-12-20 12:49:29.9442 DEBUG testing logger 1
+2020-12-20 12:49:33.5401 DEBUG controller 3 log
+2020-12-20 12:49:33.5401 DEBUG Testing the logging of our Logger Service.
